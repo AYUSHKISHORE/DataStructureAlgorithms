@@ -1,5 +1,6 @@
 package LinkedList;
 
+
 class Node{
 	int data;
 	Node next;
@@ -14,19 +15,16 @@ public class SingleLinkedListObjMethod {
 	private Node tail;
 	
 	private void insertAtHead(int d) {
-		if(head == null) {
-			Node curr = new Node(d);
-			head = curr;
-			tail=head;
+		if(head == null){
+			head = new Node(d);
+			head.next = null;
+			tail = head;
 		}else {
-			Node curr = head;
-			while(curr.next!=null) {
-				curr=curr.next;
-			}
-			curr.next = new Node(d);
-			tail = curr.next;
-			curr.next.next=null;
+			Node curr = new Node(d);
+			curr.next=head;
+			head=curr;
 		}
+		
 	}
 	
 	 private void print() {
