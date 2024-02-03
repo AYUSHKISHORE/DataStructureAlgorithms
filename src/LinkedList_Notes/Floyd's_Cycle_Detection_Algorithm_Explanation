@@ -1,0 +1,36 @@
+Floyd's Tortoise and Hare Algorithm (OR) Floyd's Cycle Detection Algorithm
+
+1-> 2-> 3-> 4-> 5-> (CYCLE) -> 2 
+
+Here in this algorithm, we have tortoise and hare where tortoise move 1 step at a time and hare move 2 steps are time.
+if hare and tortoise meet then cycle exists.
+
+hare = head;
+tortoise = head;
+
+while(hare.next!=null && hare.next.next!=null){
+	hare = hare.next.next;
+	tortoise = tortoise.next;
+	if(hare == tortoise){
+		** CYCLE FOUND
+		break;
+	}
+}
+
+
+NOTE ABOVE ALGORITHM DOES GIVES START POINT OF CYCLE, FOR THAT WE NEED TO MAKE FEW MODIFICATION AFTER DETECTING CYCLE.
+
+ONCE CYCLE IS DETECTED.
+
+if(hare == tortoise){
+
+}
+
+1) SET hare or tortoise to head;
+2) start moving both hare and tortoise 1 step at a time till hare and tortoise doesn't meet
+if(hare == tortoise){
+	hare = hare.next;
+	tortoise = tortoise.next;
+}
+
+3)Then return the position, which is starting point of cycle.

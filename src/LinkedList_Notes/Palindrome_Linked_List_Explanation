@@ -1,0 +1,34 @@
+1)Palindrome in LinkedList
+	Eg1)
+	i/p -> 1 3 2 3 1
+	o/p -> yes
+	
+	Eg2)
+	i/p -> 1 2 3 4
+	o/p -> no
+	
+	Eg3)
+	i/p -> 1 3 2 2 3 1
+	o/p -> yes
+	
+	Eg4)
+	i/p -> 1
+	o/p -> yes
+	 
+	->a)Inorder to find palindrome in linkedlist, we use 2 pointer tech where 1st pointer is slow and 2nd pointer is fast
+		slow moves 1 step at a time and fast move 2 step at a time.
+	  b)First we reach to mid position of the linkedlist, inorder to do this we will move slow pointer and fast pointer together
+	    by this way fast will reach to the end of linkedlist or fast.next == null and slow will reach the mid position
+	  c)Now reverse the slow pointer and make fast pointer again the 1st position (i.e) head of the linkedlist
+	  d)Now compare the the element till slow pointer reaches null.
+	  
+	illustration
+	Eg1) 1 3 2 3 1
+	slow = 1 3 2
+	fast = 1 2 1
+	now we stop here as fast.next=null
+	and since fast!=null we will move slow 1 step (so slow = 3)
+	
+	Now we reverse slow = (1, 3) and make fast position at head = 1
+	start compare
+	
