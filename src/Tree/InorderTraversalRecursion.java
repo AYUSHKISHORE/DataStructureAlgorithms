@@ -1,5 +1,8 @@
 package Tree;
 
+//INORDER TRAVERSAL
+//TIME COMPLEXITY - O(N)
+//SPACE COMPLEXTIY - O(N) (AS RECURSION CAUSES INSERTION IN STACK MEMORY)
 public class InorderTraversalRecursion {
 	
 	public static void main(String[]args) {
@@ -63,8 +66,8 @@ public class InorderTraversalRecursion {
 
  class BinaryNodeInorder{
 	String value;
-	BinaryNodeInorder left;
-	BinaryNodeInorder right;
+	BinaryNodeInorder left; // This is class type variable
+	BinaryNodeInorder right; // This is class type variable
 	int height;
 }
 

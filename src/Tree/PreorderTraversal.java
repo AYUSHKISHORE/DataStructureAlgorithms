@@ -1,5 +1,9 @@
 package Tree;
 
+
+//PREORDER TRAVERSAL USING LINKED LIST
+//TIME COMPLEXITY - O(N)
+//SPACE COMPLEXTIY - O(N) (AS RECURSION CAUSES INSERTION IN STACK MEMORY)
 //This is recursion code
 public class PreorderTraversal {
 
