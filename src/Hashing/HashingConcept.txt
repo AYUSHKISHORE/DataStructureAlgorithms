@@ -1,0 +1,38 @@
+Hashing is a method of sorting and indexing data. The idea behind hashing is to allow large amount data to be indexed using key commonly formula.
+
+Hashing Terminology
+-> HashFunction - It is a function that can be used to map of aribarty size to data of fixed size.
+-> Key - Input data by user
+-> HashValue - A value that is returned by hashfunction
+-> HashTable - It is a data structure which implements an associative array abstract data type, a structure that can map keys to value.
+-> Collison - A collison occurs when two different keys to a hash function produce the same output
+
+A good HashFunction
+-> It distributes the hash value uniformly across the hashtable
+-> It has to use all i/p data.
+
+When HashTable is full?
+In direct chaining hashtable full will never occur (as in direct chaining we keep on adding the number in linkedlist if index is same)
+In open addressing method -> If hashtable is full we create 2x size of current hashtable & recall hashing for current keys
+
+
+Collision Resolution Techniques
+1) Direct Chaining
+Implements the bucket as the LinkedList colliding elements are stored in the list
+Instead of storing the value at index obtained from hash function we store linkedlist address at that index
+
+2) Open Addressing -> Colliding elements are stored in other vacant bucket during storage and lookup there are found through probing
+	2.1) Linear Probing -> It places the newKey into closets following empty cell
+	2.2) Quadratic Probing -> Adding arbitary quadratic polynomial to the index untilan empty cell is found ((oldIndex + SuccessivePolynomialValue)%hashtableLength = newIndex --> 2 + 1^2 = 3) (Successive Polynomial Value = 1^2 , 2^2 , 3^2 ....)
+	2.3) Double hashing -> We obtain value from 2 hash function and then use this formula  (newIndex = (index1 + (i * index2))%h where i = 0,1,2,3...)
+
+
+
+Practical Use of Hashing
+1) password verification - when we enter password in then server converts it into hash index & check in hashTable
+(Note - hashing function is a 1-way traffic means we can get hash from hashfunc, but we can't get key from hashFunc using value
+
+Pros & Cons
+1) On an avg  insertion/deletion/search operation take O(1) time
+2) when hash function is not good enough insertion/deletion can take O(N) which is bad as AVL tree takes O(logN)
+3) insertion, deletion,search is better than array & linkedlist , even better than tree is some cases;
