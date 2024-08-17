@@ -1,0 +1,109 @@
+Sorting - refers to arranging data in a particular format either ascending or descending
+
+Practical use of sorting
+-> Microsoft Excel - Built in sorting mechanism
+-> Online Store - sort filter on ecommerce website
+
+-----------------------------------------------------------------------------
+sorting algorithm			Time complexity		Space Complexity	Stable
+-----------------------------------------------------------------------------
+Bubble sort						O(n^2)				O(1)			Yes
+Selection sort					O(n^2)				O(1)			No
+Insertion sort					O(n^2)				O(1)			Yes
+Bucket sort						O(nlogn)			O(n)			Yes
+Merge sort						O(nlogn)			O(n)			Yes
+Quick sort						O(nlogn)			O(n)			No
+Heap Sort						O(nlogn)			O(1)			No
+Cyclic sort						O(n)				O(1)			Yes
+
+
+
+
+
+------------------------------------------------------------------------------
+Types of sorting
+1) Space Used
+	1a) Inplace Sorting - When sorting algorithm doesn't require extra space
+		Eg-> Bubble sort, Selection Sort, Insertion Sort, Heap Sort , Cyclic sort
+	1b) Outplace sorting - when sorting algorithm require extra space
+		Eg -> Merge Sort , bucket sort, quick sort
+	
+2) Stability
+	2a) Stable -> If a sorting algorithm after sorting the content doesn't change the sequence of similar content
+			which they appear then the sorting is called stable sorting.
+			Eg -> Insertion sort, Merge Sort, Bubble sort, Bucket sort, Cyclic sort
+	2b) Unstable -> If sorting algorithm, after sorting the content changes the sequence of similar content in which they appear,
+			then it is called unstable sort
+			Eg -> quick sort, selection sort
+
+
+Sorting terminology
+1) Increasing order
+	-> If succesive element is greater than previous one
+		Eg -> 1,3,5,7,9
+		
+2) Decreasing order
+	-> If successive element is less than the previous one
+		Eg -> 11,9,7,5,3,1
+		
+3) Non-Increasing order 
+	 -> If succesive element is less than or equal to its previous element
+	 	Eg -> 11, 9, 7 , 5, 5 ,3 ,1
+
+4) Non-Decreasing order
+	 -> If successive element is gt than or equal to its previous element
+	 	Eg -> 1, 2, 3,3,4 ,5
+	 	
+	 	
+Other Sorting alogrithm
+
+Counting Sort: Extremely efficient (O(n + k)) when the range of input values (k) is not significantly larger than the number of items (n). It’s a non-comparison-based sort and works well for integers or discrete keys.
+
+Radix Sort: Efficient for sorting large lists of integers or strings where the range of digits or characters is known. It can achieve linear time complexity, O(n), for certain conditions.
+
+Tim Sort: A hybrid sorting algorithm derived from merge sort and insertion sort, used in practical implementations like Python's sorted() function and Java’s Arrays.sort(). It is optimized for real-world data and performs very well in practice.
+
+
+which sorting method is best?
+
+
+The "best" sorting method often depends on the specific situation, including the size of the data set, whether the data is partially sorted, and the constraints of the system (e.g., memory usage, stability requirements). Here’s a quick overview of some popular sorting algorithms and their typical use cases:
+
+    Quick Sort:
+        Best for: Average-case performance in practice for large data sets.
+        Complexity: Average O(n log n), Worst-case O(n²).
+        Characteristics: In-place, not stable.
+
+    Merge Sort:
+        Best for: Large data sets, especially when stable sorting is required.
+        Complexity: O(n log n) in all cases.
+        Characteristics: Stable, requires additional space proportional to the size of the data.
+
+    Heap Sort:
+        Best for: Situations where in-place sorting is needed and you want guaranteed O(n log n) time complexity.
+        Complexity: O(n log n) in all cases.
+        Characteristics: In-place, not stable.
+
+    Insertion Sort:
+        Best for: Small data sets or nearly sorted data.
+        Complexity: Average and Worst-case O(n²), Best-case O(n) for nearly sorted data.
+        Characteristics: Stable, in-place.
+
+    Bubble Sort:
+        Best for: Educational purposes or very small data sets.
+        Complexity: Average and Worst-case O(n²).
+        Characteristics: Stable, in-place.
+
+    Radix Sort:
+        Best for: Sorting integers or fixed-length strings, especially when you need linear time complexity.
+        Complexity: O(nk), where k is the number of digits or characters.
+        Characteristics: Stable, not in-place.
+
+In practice:
+
+    For most general-purpose needs, Quick Sort or Merge Sort is often preferred.
+    Insertion Sort is good for small arrays or arrays that are already nearly sorted.
+    Radix Sort can be very efficient for specific types of data, like integers within a certain range.
+
+If you're working in a specific context or with particular constraints, those factors might shift which algorithm is the most appropriate for your needs.
+	 	
