@@ -1,0 +1,113 @@
+Graph
+
+Q)What is a Graph? and Why do we need Graph?
+A) Graph consists of a finite set of vertices(or nodes) and set of edges which connected a pair of nodes.
+
+
+Graphs are used to solve network problem like city/telephone/circuit network
+Eg) In facebook each user represented with vertex or Node, and each node is structure & contains information like personId,name, gender
+
+Eg) Graphs are used to find the shortest path
+
+-> As tree a also have nodes connection just like graph, but we can use tree as tree is not cyclic but graph can be cyclic.
+
+Graph Terminology
+
+1)Vertices: Vertices are the node of the graph
+2)Edge: The edge is the line that connects pair of vertices{E1,E2,E3}
+3)Unweighted Graph: A graph which doesn't have a weight associated with any edge
+4)Weighted Graph: A graph which has weight associated with any edge
+5)Undirected Graph: In case edges of graph donot have a direction associated with them
+6)Direceted Graph: If the edges in a graph has a direction associated with them
+7)Cyclic Graph: A graph which has atleast 1 loop
+8)ACyclic Graph: A graph with no loop
+9)Tree - It is special case of directed acyclic graph.
+
+
+Types of Graph
+Graph
+	-> Directed
+		->Weighted
+			-> +Ve
+			-> -Ve
+		->Unweighted
+	-> Undirected 
+		->Weighted
+			-> +Ve
+			-> -Ve
+		->Unweighted
+		
+Graph Representation
+1)Adjacency Matrix: A adjacency matrix is a square matri or you can say it is 2D array and the elements of the matrix indicate whether pairs of vertices are adjacent or not in graph
+A-B-C
+
+	A B C
+A	0 1 0
+B	1 0	1
+C	0 1 0
+
+2)Adjacency List: A adjacency list is a collection of unordered list used to represent a graph. Each list describes the set of neighbors of vertex in the graph
+A-B-C
+
+A->L(B)
+B->L(A)->L(C)
+C->L(B)
+
+Note: L here respresent LinkedList
+
+
+IMPORTANT)
+When to use which representation of Graph (Adjacency matrix or Adjacency List)?
+If graph is a complete or almost complete we should use Adjacency Matric
+If the number of edges are few then we should use Adjancecy List(As most of connection will be Empty).
+
+
+
+_______________________________________________________________________________________
+
+Topological Sort
+
+Sorts given action in such a way that if there is a dependency of one action on another, then the dependent actions always comes later than parent action
+
+A->C
+B->C 
+B->D
+
+
+then 
+A,B,C,D will come
+
+___________________________________________________________________________________________
+
+Single Source Shortest Path Problem (SSSPP)
+
+A single source problem is about finding a path between a given vertex (called source) to all other vertices in a graph such that the total distance between them (source & distance) is min
+
+3 ways of  (SSSPP) are
+ -> BFS
+ -> Dijikstra
+ -> Bellman ford
+ 
+1) BFS
+Using BFS we goes to every adjacent node of the parent node before moving to next node
+Time Complexity - O(V) * Adjacent  = O(E)
+Space Complexity - O(V)
+
+Only problem with BFS is it doesn't work with weights
+Eg)
+Path1
+A-B (10)
+B-D (30)
+
+Path2
+A-B (10)
+B-E (5)
+E-D (6)
+
+But as per BFS, if we want to go from A to D
+
+then as per BFS we get 40 (A->B->D) but the shortest path is 21 (A->B->E->D)
+
+Why does DFS doesn't work for SSSPP?
+DFS has a tendency to go as far as possible from source hence it can never find shortest path
+It first go to the deepest & then start backtracking.

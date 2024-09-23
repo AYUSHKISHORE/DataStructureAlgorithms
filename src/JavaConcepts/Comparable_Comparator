@@ -1,0 +1,22 @@
+Comparable vs Comparator
+
+In java both comparable and comparator are interface used for sorting and ordering objects, but they serve different pupose and used in different ways
+
+Comparable
+1) It is a interface in Java
+2) Comparable provide compareTo() method to sort object.
+3) Comparable is a part of java.lang. package
+4) Comparable can be used for natural or default ordering
+5) Comparable provides a single sorting seg. Eg Sort either by name of id.
+6) Comparable modifies the class the implement is
+7) We can sort the list elements of Comparable type by Collections.sort(List) method
+
+
+Comparator
+1) Comparator is a functional interface in Java.
+2) Comparator provides compare() method to sort object.
+3) Comparator is a part of java.util package
+4) Comparator can be used for custom ordering
+5) Comparator provides multiple sorting sequence. Eg sort by both id & name.
+6) Compartor doesn't modify the clsss
+7) We can sort the list elements of comparator type by Collections.sort(list, comparator) method i.e( Collections.sort(list, classNameOfComparator) )
