@@ -24,7 +24,8 @@ package Sorting;
 public class MergeSort {
 
 	public static void main(String []args) {
-		int a[] = {6,4,3,7,5,1,2};
+		//int a[] = {6,4,3,7,5,1,2};
+		int a[] = {1,2,3};
 		MergeSortImp ms = new MergeSortImp(a);
 		ms.sort(a);
 		ms.printArray();
@@ -46,12 +47,19 @@ class MergeSortImp{
 		int rightarr[]= new int[a.length-mid];
 		System.arraycopy(a, 0, leftarr, 0, mid);
 		System.arraycopy(a, mid, rightarr, 0, a.length-mid);
+		System.out.println("leftArray"+java.util.Arrays.toString(leftarr));
+		System.out.println("rightarr"+java.util.Arrays.toString(rightarr));
+		System.out.println("a"+java.util.Arrays.toString(a));
+
 		sort(leftarr);
 		sort(rightarr);
+		
 		merge(a,leftarr,rightarr);
 	}
 	
 	void merge(int a[],int leftarr[],int rightarr[]) {
+		System.out.println("MERGE leftArray"+java.util.Arrays.toString(leftarr));
+		System.out.println("MERGE rightarr"+java.util.Arrays.toString(rightarr));
 		int i=0,j=0,k=0;
 		
 		while(i<leftarr.length && j<rightarr.length) {

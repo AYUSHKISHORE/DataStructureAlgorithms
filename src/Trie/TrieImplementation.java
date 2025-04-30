@@ -180,30 +180,38 @@ class Trie{
 		TrieNode current = parent.children.get(ch);
 		
 		if(current.children.size()>1) {//Means currentNode has more than one child
+			System.out.println("1 ="+ch);
 			deleteWord(current,value,index+1);
 			return false;
 		}
 		
 		if(index==value.length()-1) {
 			if(current.children.size()>=1) {// means value is a prefix of another string
+				System.out.println("2 ="+ch);
 				current.endOfString=false;
 				return false;
 			}else {
+				System.out.println("3 ="+ch);
 				parent.children.remove(ch);
 				return true;
 			}
 		}
 		
 		if(current.endOfString==true) {//Word to be deleted has the prefix
+			System.out.println("4 ="+ch);
 			deleteWord(current,value,index+1);
 			return false;
 		}
 		
+		System.out.println("5 ="+ch);
 		boolean canThisBeDeleted = deleteWord(current,value,index+1);
+		System.out.println("canThisBeDeleted"+canThisBeDeleted);
 		if(canThisBeDeleted) {// When word is not dependent on another node
+			System.out.println("6 ="+current.toString());
 			parent.children.remove(ch);
 			return true;
 		}else {
+			System.out.println("7 ="+ch);
 			return false;
 		}
 	}
