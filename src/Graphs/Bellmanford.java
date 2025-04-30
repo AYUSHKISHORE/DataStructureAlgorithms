@@ -36,24 +36,24 @@ public class Bellmanford {
 		//Case of -ve cycle
 		
 		ArrayList<WeightedNodeBellmanFord> nodeList2 = new ArrayList<>();
-		nodeList.add(new WeightedNodeBellmanFord("A",0));
-		nodeList.add(new WeightedNodeBellmanFord("B",1));
-		nodeList.add(new WeightedNodeBellmanFord("C",2));
-		nodeList.add(new WeightedNodeBellmanFord("D",3));
-		nodeList.add(new WeightedNodeBellmanFord("E",4));
+		nodeList2.add(new WeightedNodeBellmanFord("A",0));
+		nodeList2.add(new WeightedNodeBellmanFord("B",1));
+		nodeList2.add(new WeightedNodeBellmanFord("C",2));
+		nodeList2.add(new WeightedNodeBellmanFord("D",3));
+		nodeList2.add(new WeightedNodeBellmanFord("E",4));
 		
 		//Case of no cycle
-		WeightedGraphBellmanFord newGraph2 = new WeightedGraphBellmanFord(nodeList);
-		newGraph.addDirectedEdge(0, 2, 6); // index1, index2, distance
-		newGraph.addDirectedEdge(0, 3, -6);
-		newGraph.addDirectedEdge(1, 0, 3);
-		newGraph.addDirectedEdge(2, 3, 1);
-		newGraph.addDirectedEdge(3, 1, 1);
-		newGraph.addDirectedEdge(4, 1, 4);
-		newGraph.addDirectedEdge(4, 3, 2);
+		WeightedGraphBellmanFord newGraph2 = new WeightedGraphBellmanFord(nodeList2);
+		newGraph2.addDirectedEdge(0, 2, 6); // index1, index2, distance
+		newGraph2.addDirectedEdge(0, 3, -6);
+		newGraph2.addDirectedEdge(1, 0, 3);
+		newGraph2.addDirectedEdge(2, 3, 1);
+		newGraph2.addDirectedEdge(3, 1, 1);
+		newGraph2.addDirectedEdge(4, 1, 4);
+		newGraph2.addDirectedEdge(4, 3, 2);
 		
 		System.out.println("Printing Bellman Ford algorithm from Source A");
-		newGraph.bellmanford(nodeList.get(0));
+		newGraph2.bellmanford(nodeList2.get(0));
 		
 	}
 }
@@ -70,7 +70,7 @@ class WeightedNodeBellmanFord{
 	WeightedNodeBellmanFord(String name, int index){
 		this.name = name;
 		this.index = index;
-		this.distance = Integer.MAX_VALUE;
+		this.distance = Integer.MAX_VALUE/10; //to reduce overflow
 	}
 	
 	@Override
@@ -132,7 +132,7 @@ class WeightedGraphBellmanFord{
 		
 		System.out.println("-ve cycle not found");
 		for(WeightedNodeBellmanFord curr : nodeList) {
-			System.out.print("Node"+ curr+ " distance: "+curr.distance + " path: ");
+			System.out.print("Node "+ curr.name+ " distance: "+curr.distance + " path: ");
 			pathPrint(curr);
 			System.out.println();
 		}
