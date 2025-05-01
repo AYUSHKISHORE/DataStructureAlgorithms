@@ -3,11 +3,17 @@ import java.util.*;
 
 
 /*
- * 
- * TIME COMPLEXITY - O(V) * Adjacent Neighbors
- * 
+ * Incase of SSSPP
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V*E)
  * SPACE COMPLEXITY - O(V) - Size of queue
+ * 
+ * Incase of All pair shortest path problem
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V^2 *E)
+ * SPACE COMPLEXITY - O(VE) - Size of queue
+ * 
+ * Best for unweighted graph
  */
+
 public class SSSPP_BFS_AdM {
 	public static void main(String []args) {
 		ArrayList<SSSPP_BFS_GraphNode_AdM> nodeList = new ArrayList<>();

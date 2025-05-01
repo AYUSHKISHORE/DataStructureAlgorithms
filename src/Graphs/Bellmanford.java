@@ -3,6 +3,42 @@ package Graphs;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/*
+ * Incase of SSSPP
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V*E)
+ * SPACE COMPLEXITY - O(V) - Size of queue
+ */
+ /*
+  Step-by-step why it’s O(V × E)
+	One “edge scan” takes E steps
+	In code you do something like:
+
+	for each node u in the graph         // V iterations
+  		for each edge (u → v) out of u     // total across all u is E
+    		do a constant amount of work
+	If you add up “for each outgoing edge” across all nodes, you visit every edge exactly once, so that inner part is E operations.
+
+	You repeat the edge scan V–1 times
+	The Bellman–Ford algorithm says “relax every edge” one more time in each pass, and you need V–1 passes. In big-O land, V–1 is the same as V. So you do that edge scan V times.
+
+	Multiply them together
+
+	One pass = E steps
+
+	V passes = V × E steps
+
+	That’s why we say the running time is O(V × E).
+	*/
+ 
+/*
+ * 
+ * Incase of All pair shortest path problem
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V^2 *E)
+ * SPACE COMPLEXITY - O(VE) - Size of queue
+ * 
+ * Best for all graph (as it can identify -ve cycle)
+ */
+
 public class Bellmanford {
 	public static void main(String []args) {
 		ArrayList<WeightedNodeBellmanFord> nodeList = new ArrayList<>();
@@ -103,7 +139,7 @@ class WeightedGraphBellmanFord{
 		sourceNode.distance=0;
 		
 		//Note in bellmanford algorithm its run V-1 times 
-		for(int i=0;i<nodeList.size();i++) {
+		for(int i=0;i<nodeList.size()-1;i++) {
 			for(WeightedNodeBellmanFord curr : nodeList) {
 					for(WeightedNodeBellmanFord neighbor : curr.neighbors) {
 						if(neighbor.distance > curr.distance + curr.weightMap.get(neighbor)) {

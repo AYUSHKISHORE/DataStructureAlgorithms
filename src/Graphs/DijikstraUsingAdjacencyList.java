@@ -4,6 +4,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+/*
+ * Incase of SSSPP
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V*E)
+ * SPACE COMPLEXITY - O(V) - Size of queue
+ * 
+ * Incase of All pair shortest path problem
+ * TIME COMPLEXITY - O(V) * Adjacent Neighbors i.e ( O(V^2 *E)
+ * SPACE COMPLEXITY - O(VE) - Size of queue
+ * 
+ * Best for weighted graph , can also work for unweighted graph (but didn't work for -ve cycle)
+ */
+
 public class DijikstraUsingAdjacencyList {
 
 	public static void main(String []args) {
