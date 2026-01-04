@@ -69,7 +69,7 @@ class FindIndex{
 					left = mid + 1;
 				}
 			}else {
-				if(array[mid]<num && num < array[right]) {
+				if(array[mid]<num && num <= array[right]) {
 					left = mid + 1;
 				}else {
 					right = mid - 1;
