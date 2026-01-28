@@ -35,6 +35,19 @@ package DivideAndConquer;
  *   time complexity = O(2^(n+n)) -> we are going exponentially and why n+n is because once we are going down and once we are going up
  *     -> from [(n-1)(n-1)] to [(0,0)] = n + n -2
  */
+
+/*
+ * Time Complexity - O(2^(m+n))
+ * 	Branching Factor - 2
+ * 		int minCost1 = computeBottomUp(array, row - 1, col);
+		int minCost2 = computeBottomUp(array, row , col - 1);
+	Depth - m+n
+	
+	Time Complexity - BranchingFactor ^ Depth
+	
+	Space Complexity - O(m+n)
+ * 
+ */
 public class MinCostToReachLastCell {
 	public static void main(String []args) {
 		int [][]array= {

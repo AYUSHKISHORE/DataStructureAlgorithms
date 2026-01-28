@@ -10,6 +10,7 @@ package DivideAndConquer;
     sortedFrequency([], 4) # -1
 
 Time Complexity - O(log n)
+Space Complexity - O(1)
  * 
  * 
  */

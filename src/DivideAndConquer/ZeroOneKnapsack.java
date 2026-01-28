@@ -18,7 +18,19 @@ package DivideAndConquer;
  *  
  * 
  */
-
+/*
+ * Time Complexity - O(2^n)
+ * 	Branching Factor - 2
+ * 		if(wts[i]<=capacity) {
+			profit1=pts[i]+computeProfits(wts,pts,i+1,capacity-wts[i]);
+		}
+		int profit2 = computeProfits(wts,pts,i+1,capacity);
+ *  Depth - n
+ *  TimeComplexity - Branching Factor ^ Depth
+ * 
+ * Space Complexity - O(n) (Stack heap)
+ * 
+ */
 
 public class ZeroOneKnapsack {
 	public static void main(String []args) {

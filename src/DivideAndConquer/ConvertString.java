@@ -28,6 +28,26 @@ package DivideAndConquer;
  *  replaceOperation = f(3,3)
  *  
  */
+
+
+/*
+ * 
+ * This is example of Levenshtein distance
+ * 
+ * -> Levenshtein distance is the minimum number of single-character operations required to convert one string into another.
+ * 
+ * Time Complexity - O(3^(n+m))
+ *  branching factor - 3 
+ *  	int deleteOpr  = 1 + findMinOperation(s1,s2,index1,index2+1);
+		int insertOpr  = 1 + findMinOperation(s1,s2,index1+1,index2);
+		int replaceOpr = 1 + findMinOperation(s1,s2,index1+1,index2+1);
+ *  and depth - (n+m)
+ * 
+ * Space Complexity - O(n+m)
+ * 
+ * 
+ */
+
 public class ConvertString {
 	public static  void main(String[]args) {
 		ConvertOneStrToAnotherStr ctr = new ConvertOneStrToAnotherStr();

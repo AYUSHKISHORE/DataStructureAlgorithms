@@ -7,9 +7,6 @@ Write a function which accepts a rotated array of sorted numbers and an integer.
 
 Constraints:
 
-Time Complexity - O(log n)
-
-Space Complexity - O(1)
 
     findRotatedIndex([3, 4, 1, 2], 4) # 1
     findRotatedIndex([4, 6, 7, 8, 9, 1, 2, 3, 4], 8) # 3
@@ -24,6 +21,9 @@ Space Complexity - O(1)
  * 
  * 
  * 
+	Time Complexity - O(log n)
+	
+	Space Complexity - O(1)
  * 
  */
 

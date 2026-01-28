@@ -8,6 +8,8 @@ package DivideAndConquer;
  * 
  * 
  * Time complexity = O(n) (as we are breaking it sub part).
+ * Space complexity = O(logn) 
+ * 		n → n/2 → n/4 → n/8 → ... → 1 (as due to recursion stack it breaking into half)
  */
 
 public class CountZero2 {

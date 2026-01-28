@@ -16,6 +16,17 @@ package DivideAndConquer;
  *   Option1 = 0 + F(Any seven elements)
  *   Option2 = 6 + F(Next 5 element excluding 7)
  *   
+ *   
+/*
+ * Time Complexity - O(2^n)
+ * 	Branching Factor - 2
+ * 		int choseCurrentHouse = houseNetWorth[currIdx]+computeMaxRobbery(houseNetWorth,currIdx+2);
+		int skipCurrentHouse = computeMaxRobbery(houseNetWorth,currIdx+1);
+ *  Depth - n
+ *  TimeComplexity - Branching Factor ^ Depth
+ * 
+ * Space Complexity - O(n) (Stack heap)
+ * 
  */
 
 public class HouseRobber {

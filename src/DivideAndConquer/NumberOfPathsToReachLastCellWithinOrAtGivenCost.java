@@ -37,6 +37,19 @@ package DivideAndConquer;
  * 
  */
 
+/*
+ * Time Complexity - O(2^(m+n))
+ * 	Branching Factor - 2
+ * 		int nosOfPathsFromPrevRow = computeAtWithinCost(array, row-1, col, cost-array[row][col]);
+		int nosOfPathsFromPrevCol = computeAtWithinCost(array, row, col-1, cost-array[row][col]);
+	Depth - m+n
+	
+	Time Complexity - BranchingFactor ^ Depth
+	
+	Space Complexity - O(m+n)
+ * 
+ */
+
 public class NumberOfPathsToReachLastCellWithinOrAtGivenCost {
 	public static void main(String []args) {
 		NumberOfPaths np = new NumberOfPaths();

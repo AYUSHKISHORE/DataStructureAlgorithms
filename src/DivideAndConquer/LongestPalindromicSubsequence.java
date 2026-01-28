@@ -14,11 +14,31 @@ package DivideAndConquer;
  * 
  */
 
+/*
+ * 
+ * Time complexity - O(2^n) 
+ * 	Branching Factor - 2
+ * 		String s1 = getLPS(str,i1+1,j1);
+		String s2 = getLPS(str,i1,j1-1);
+ * 	Depth - n
+ * 		So time complexity = Branching Factor ^ Depth
+ * 		O(2^n)
+ * 
+ * Space complexity - O(n) {Due to recursion}
+ * 
+ * 
+ * Method			| Time Complexity 		| Space Complexity
+ * 
+ * compute			| O(2^n)				| O(n)
+ * getLPS {String}	| O(2^n x L)			| O(n)	
+ * 
+ */
+
 public class LongestPalindromicSubsequence {
 	public static void main(String []args) {
 		LPS lps = new LPS();
-		System.out.println(lps.compute("ELRMENMET"));
-		System.out.println(lps.getLPS("ELRMENMET"));
+		System.out.println(lps.compute("ELRMENMET")); //5
+		System.out.println(lps.getLPS("ELRMENMET")); //EMEME
 	}
 }
 

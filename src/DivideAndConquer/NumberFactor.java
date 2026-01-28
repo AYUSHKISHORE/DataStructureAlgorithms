@@ -18,6 +18,20 @@ package DivideAndConquer;
  *  
  */
 
+/*
+ * Time Complexity - O(3^n)
+ * 	Branching Factor - 3
+ * 		int sub1 = FindWaysToGetN(n-1);
+		int sub2 = FindWaysToGetN(n-3);
+		int sub3 = FindWaysToGetN(n-4);
+ * 
+ *  Depth - n
+ *  TimeComplexity - Branching Factor ^ Depth
+ * 
+ * Space Complexity - O(n)
+ * 
+ */
+
 public class NumberFactor {
 	public static void main(String[] args) {
 		WaysToGetN nf = new WaysToGetN();

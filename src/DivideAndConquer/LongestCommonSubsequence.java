@@ -2,7 +2,7 @@ package DivideAndConquer;
 /*
  * Problem
  * 	- S1 & S2 are given strings
- *  - Find the length of the longes subsequence which is common in both string
+ *  - Find the length of the longest subsequence which is common in both string
  *  
  *  - subsequence : a sequence that can be driven from another by deleting some elements without changing the other
  *   	- eg 
@@ -20,7 +20,17 @@ package DivideAndConquer;
  *    option2 = 0 + f(index_1,length_1 : index_2+1,length_2 )
  *    option3 = 0 + f(index_1+1,length_1 : index_2,length_2)
  *    max(option1,option2,option3)
+ *    
+ *     
+ * Method			| time complexity		| space complexity
  * 
+ * compute			| O(2^(n+m))			| O(n+m) stack memory
+ * computeString	| O(2^(n+m) x L)		| O((n+m) x L) stack memory + string preparation
+ * 
+ * 
+ * why in compute time complexity O(2^(n+m) in LCS where as LPS it is O(2^n) 
+ * -> LPS recursion there are 2 branches of recursion which close on if i>=n and depth = n , so O(2^n)
+ * 		where as in LCS there are 2 branches but it depends of i>=n and j>=m which mean we are moving n x m grid which close if either n or m ends so it is O(2^(n+m))
  */
 
 public class LongestCommonSubsequence {

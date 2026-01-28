@@ -6,6 +6,9 @@ package DivideAndConquer;
  * -> note zeros are followed by 1
  * Eg [1,1,1,1,1,1,0,0,0]
  * 
+ * Time Complexity - O(logn) - {The algorithm uses binary search to locate the first 0. Since the search space is halved in every iteration, the time complexity is O(log n).}
+ * Space Complexity - O(1)
+ * 
  */
 public class CountZero1 {
 	public static void main(String []args) {
