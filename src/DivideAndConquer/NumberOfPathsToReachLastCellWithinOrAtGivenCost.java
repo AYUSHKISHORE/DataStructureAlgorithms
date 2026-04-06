@@ -68,30 +68,13 @@ public class NumberOfPathsToReachLastCellWithinOrAtGivenCost {
 
 class NumberOfPaths{
 	public int computeAtGivenCost(int[][]array, int row, int col, int cost) {
-		if(cost<0) {
+		if(cost<0 || row<0 || col<0) {
 			return 0;
 		}
 		
 		if(row==0&&col==0) {
 			return array[row][col]-cost == 0 ? 1:0;
 		}
-		/*
-		 * we can have 
-		 * if(row == 0 || col == 0){
-		 * 	return max
-		 * }
-		 * 
-		 * because it add max value & we need to compute in min cost
-		 */
-		
-		if(row == 0) {
-			return computeAtGivenCost(array, row, col-1, cost-array[row][col]);
-		}
-		
-		if(col == 0) {
-			return computeAtGivenCost(array, row-1, col, cost-array[row][col]);
-		}
-		
 		int nosOfPathsFromPrevRow = computeAtGivenCost(array, row-1, col, cost-array[row][col]);
 		int nosOfPathsFromPrevCol = computeAtGivenCost(array, row, col-1, cost-array[row][col]);
 		

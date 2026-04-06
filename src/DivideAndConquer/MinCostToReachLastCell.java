@@ -59,8 +59,8 @@ public class MinCostToReachLastCell {
 		};
 		
 		MinCost minCost = new MinCost();
-		System.out.println("BottomUpApproach = "+minCost.computeBottomUp(array, array.length-1,array[0].length-1));
-		System.out.println("TopDownApproach = "+minCost.computeTopBottom(array, 0, 0));
+		System.out.println("BottomUpApproach = "+minCost.computeBottomUp(array, array.length-1,array[0].length-1));//36
+		System.out.println("TopDownApproach = "+minCost.computeTopBottom(array, 0, 0));//36
 	}
 }
 
