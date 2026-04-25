@@ -62,7 +62,8 @@ public class NumberOfPathsToReachLastCellWithinOrAtGivenCost {
 		int cost=25;
 		System.out.println(np.computeAtGivenCost(array,array.length-1, array[0].length-1,cost));
 		System.out.println(np.computeAtWithinCost(array,array.length-1, array[0].length-1,cost));
-		
+		//printing the path at a given cost
+		np.printTDPathsDuringRecursion(array, cost);
 	}
 }
 
@@ -110,5 +111,30 @@ class NumberOfPaths{
 		int nosOfPathsFromPrevCol = computeAtWithinCost(array, row, col-1, cost-array[row][col]);
 		
 		return nosOfPathsFromPrevRow + nosOfPathsFromPrevCol;
+	}
+	
+	public void printTDPathsDuringRecursion(int[][] array, int cost) {
+		printDuringTD(array, array.length - 1, array[0].length - 1, cost, "");
+	}
+
+	private void printDuringTD(int[][] array, int r, int c, int cost, String path) {
+
+		if (r < 0 || c < 0 || cost < 0) {
+			return;
+		}
+
+		String newPath = array[r][c] + (path.isEmpty() ? "" : " -> " + path);
+
+		if (r == 0 && c == 0) {
+			if (array[0][0] == cost) {
+				System.out.println(newPath);
+			}
+			return;
+		}
+
+		int remainingCost = cost - array[r][c];
+
+		printDuringTD(array, r - 1, c, remainingCost, newPath);
+		printDuringTD(array, r, c - 1, remainingCost, newPath);
 	}
 }
