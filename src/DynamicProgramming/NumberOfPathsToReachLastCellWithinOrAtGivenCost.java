@@ -1,11 +1,14 @@
 package DynamicProgramming;
 
 /*
- * In this problem, we need a 3D DP array because the subproblem is not defined only by row and col; 
- * it also depends on cost. The state dp[row][col][cost] means the number of ways to reach cell (row, col) with exact total cost cost. 
+ * * In this problem, we need a 3D DP array because the subproblem is not defined only by row and col; 
+ * it also depends on cost. The state dp[row][col][cost] means the number of ways to reach cell (row, col) with exact total cost. 
  * A 2D DP like dp[row][col] is not enough because the same cell can be reached with different costs. 
  * For example, in matrix 1 2 3 / 4 5 6 / 7 8 9, cell (1,1) with value 5 can be reached as 1 -> 2 -> 5 = 8 and also as 1 -> 4 -> 5 = 10, so we need separate states like dp[1][1][8] and dp[1][1][10]. 
- * In Min Cost Path, cost is the answer, so 2D DP is enough, but in this problem, cost is part of the question, so we need 3D DP. We take cost + 1 because costs from 0 to cost are valid indexes. 
+ * 
+ * * In Min Cost Path, cost is the answer, so 2D DP is enough, but in this problem, cost is part of the question, so we need 3D DP. 
+ * 
+ * * We take cost + 1 because costs from 0 to cost are valid indexes. 
  * 
  * 
  *TD exact cost

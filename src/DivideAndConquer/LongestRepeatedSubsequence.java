@@ -38,9 +38,9 @@ public class LongestRepeatedSubsequence {
 		
 		LRS lrs = new LRS();
 		String s1 = "ATAKTKGGA";
-		System.out.println(lrs.compute(s1));
+		System.out.println(lrs.compute(s1)); // 4
 		
-		System.out.println(lrs.computeString(s1));
+		System.out.println(lrs.computeString(s1)); //ATKG
 	}
 }
 
