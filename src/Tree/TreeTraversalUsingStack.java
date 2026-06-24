@@ -1,5 +1,8 @@
 package Tree;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class TreeTraversalUsingStack {
@@ -41,7 +44,9 @@ public class TreeTraversalUsingStack {
 		System.out.println();
 		PreorderTraversalUsingStack(Bt.root);
 		System.out.println();
-		PostorderTraversalUsingStack(Bt.root);
+		PostorderTraversal(Bt.root);
+		System.out.println();
+		PostorderTraversalUsing2Stack(Bt.root);
 		System.out.println();
 		
 	}
@@ -87,9 +92,34 @@ public class TreeTraversalUsingStack {
 		}
 	}
 	
-	static void PostorderTraversalUsingStack(BinaryTreeNode root) {
+	static void PostorderTraversal(BinaryTreeNode root) {
+		//Left Right Root
+		System.out.println("Postorder Traversal Using single stack");
+		Stack<BinaryTreeNode> stack = new Stack<>();
+		List<String> ans = new ArrayList<>();
+		stack.push(root);
+		
+		while(!stack.isEmpty()) {
+			BinaryTreeNode curr = stack.pop();
+			ans.add(curr.val);
+			
+			if(curr.left!=null) {
+				stack.push(curr.left);
+			}
+			if(curr.right!=null) {
+				stack.push(curr.right);
+			}
+			
+		}
+		
+		Collections.reverse(ans);
+		
+		System.out.println(ans);
+	}
+	
+	static void PostorderTraversalUsing2Stack(BinaryTreeNode root) {
 		//left -> right -> root
-		System.out.println("Postorder Traversal");
+		System.out.println("Postorder Traversal Using 2 stack");
 		Stack<BinaryTreeNode> s1 = new Stack<>();
 		Stack<BinaryTreeNode> s2 = new Stack<>();
 		
