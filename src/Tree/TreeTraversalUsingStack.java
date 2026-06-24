@@ -4,6 +4,26 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
+/*
+ * 
+ 	Preorder:
+		Root Left Right
+		=> print first
+		=> push right, left
+
+	Inorder:
+		Left Root Right
+		=> left chain, print, right
+
+	Postorder:
+		Left Right Root	
+		=> push left, right, 
+		reverse answer (as we storing the elements)
+ * 
+ * 
+ * 
+ */
+
 
 public class TreeTraversalUsingStack {
 	public static void main(String []args) {
